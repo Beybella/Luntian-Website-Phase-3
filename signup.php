@@ -49,31 +49,96 @@
     }
 ?>
 
-<section class="contact" style="min-height: 80vh; display: flex; align-items: center;">
-    <div class="container">
-        <div class="section-header">
-            <h2>Create Account</h2>
-            <p>Join the Luntian family</p>
-        </div>
-        
-        <div class="contact-form-wrapper" style="max-width: 450px;">
-            <div style="text-align: center; margin-bottom: 1rem;">
-                <?php echo $message; ?>
+<!-- Signup Section -->
+<section class="auth-section">
+    <div class="auth-wrapper">
+        <div class="auth-card">
+                <div class="auth-header">
+                    <i class="fas fa-user-plus auth-icon"></i>
+                    <h2>Create Account</h2>
+                    <p>Join Luntian and start your flower journey</p>
+                </div>
+
+                <div style="text-align: center; margin-bottom: 1.5rem;">
+                    <?php echo $message; ?>
+                </div>
+
+                <form class="auth-form" id="signupForm" method="POST" action="signup.php">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName"><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" id="firstName" name="name" placeholder="Full name" value="<?php echo htmlspecialchars($nameValue); ?>" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupEmail"><i class="fas fa-envelope"></i> Email Address</label>
+                        <input type="email" id="signupEmail" name="email" placeholder="Enter your email" value="<?php echo htmlspecialchars($emailValue); ?>" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupPassword"><i class="fas fa-lock"></i> Password</label>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="signupPassword" name="password" placeholder="Create a password" required>
+                            <button type="button" class="toggle-password" id="toggleSignupPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <small class="password-hint">Must be at least 8 characters</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword"><i class="fas fa-lock"></i> Confirm Password</label>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="confirmPassword" name="confirm_password" placeholder="Confirm your password" required>
+                            <button type="button" class="toggle-password" id="toggleConfirmPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="terms" required>
+                            <span>I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-auth">Create Account</button>
+
+                    <div class="auth-divider">
+                        <span>OR</span>
+                    </div>
+
+                    <div class="social-login">
+                        <button type="button" class="btn-social btn-google">
+                            <i class="fab fa-google"></i> Sign up with Google
+                        </button>
+                        <button type="button" class="btn-social btn-facebook">
+                            <i class="fab fa-facebook-f"></i> Sign up with Facebook
+                        </button>
+                    </div>
+
+                    <div class="auth-footer">
+                        <p>Already have an account? <a href="login.php">Login</a></p>
+                    </div>
+                </form>
             </div>
-            <form class="contact-form" method="POST" action="signup.php">
-                <input type="text" name="name" placeholder="Full Name" value="<?php echo htmlspecialchars($nameValue); ?>" required>
-                
-                <input type="email" name="email" placeholder="Email Address" value="<?php echo htmlspecialchars($emailValue); ?>" required>
-                
-                <input type="password" name="password" placeholder="Password (Min. 8 chars)" required>
-                <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-                
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Sign Up</button>
-                
-                <p style="text-align: center; margin-top: 1rem; color: var(--bark);">
-                    Already have an account? <a href="login.php" style="color: var(--olive); font-weight: bold; text-decoration: none;">Login here</a>
-                </p>
-            </form>
+
+            <div class="auth-image">
+                <div class="auth-image-overlay">
+                    <h3>Why Join Luntian?</h3>
+                    <p>Create your account and enjoy exclusive benefits</p>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check-circle"></i> Fast and easy checkout</li>
+                        <li><i class="fas fa-check-circle"></i> Track your orders in real-time</li>
+                        <li><i class="fas fa-check-circle"></i> Save your favorite arrangements</li>
+                        <li><i class="fas fa-check-circle"></i> Get exclusive member discounts</li>
+                        <li><i class="fas fa-check-circle"></i> Receive special occasion reminders</li>
+                        <li><i class="fas fa-check-circle"></i> Priority customer support</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </section>

@@ -12,7 +12,6 @@
                     <li><a href="about.php">About Us</a></li>
                     <li><a href="products.php">Products</a></li>
                     <li><a href="season.php">Flowers Season</a></li>
-                    <li><a href="index.php#contact">Contact Us</a></li>
                 </ul>
             </div>
             <div class="footer-section">
