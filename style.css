@@ -1246,14 +1246,16 @@ h3 {
     border-radius: 8px;
     background-color: #f9f9f9;
 }
+
 /* Featured Products Section */
 .featured-products {
-    padding: 0;
+    padding: 10px !important;
     background-color: var(--olive) !important;
+    padding-bottom: 50px !important;
 }
 
 .featured-products .section-header {
-    padding: 3rem 0 2rem 0;
+    padding: 30px !important;
 }
 
 .featured-products .section-header h2 {
@@ -1273,10 +1275,10 @@ h3 {
     gap: 1.5rem;
     overflow-x: auto;
     scroll-behavior: smooth;
-    padding: 2rem 20px;
+    padding: 5px !important;
     margin: 0;
     width: 100%;
-    animation: autoScroll 30s linear infinite;
+    animation: autoScroll 20s linear infinite;
 }
 
 .featured-gallery:hover {
