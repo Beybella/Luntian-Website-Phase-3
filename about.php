@@ -4,29 +4,35 @@
     include 'includes/header.php'; 
 ?>
 
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2>About Luntian</h2>
-                <p>Bringing nature's beauty to your doorstep</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
+<section id="about" class="about">
+    <div class="container">
+        <div class="section-header">
+            <h2>About Luntian</h2>
+            <p>Bringing nature's beauty to your doorstep</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text about-card">
+                <div class="content-block">
                     <h3>Our Story</h3>
                     <p>Luntian, meaning "green" in Filipino, represents our commitment to fresh, vibrant flowers that bring life and joy to every occasion. We source the finest blooms from local growers and deliver them with care across Metro Manila.</p>
-                    
+                </div>
+                
+                <div class="content-block">
                     <h3>Our Mission</h3>
                     <p>To bring joy and beauty into people's lives by delivering fresh, high-quality flowers with exceptional service, making every occasion more special.</p>
-                    
+                </div>
+                
+                <div class="content-block">
                     <h3>Our Vision</h3>
                     <p>To become Metro Manila's go-to flower shop, recognized for our unwavering commitment to freshness, reliability, and customer satisfaction.</p>
                 </div>
-                <div class="about-real-image">
-                    <img src="assets/ABOUTUSPIC.jpg" alt="Luntian Flower Shop" class="about-real-image">
-                </div>
+            </div>
+            <div class="about-real-image">
+                <img src="assets/ABOUTUSPIC.jpg" alt="Luntian Flower Shop" class="about-image-element">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="team" class="team">
         <div class="container">
