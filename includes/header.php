@@ -652,10 +652,83 @@ if (session_status() === PHP_SESSION_NONE) {
             resize: vertical;
         }
 
+        /* Featured Products Section */
+        .featured-products {
+            padding: 0;
+            background-color: var(--olive);
+        }
+
+        .featured-products .section-header {
+            padding: 3rem 0 2rem 0;
+        }
+
+        .featured-products .section-header h2 {
+            color: white;
+        }
+
+        .featured-products .section-header p {
+            color: var(--parchment);
+        }
+
+        .featured-gallery {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 2rem 20px;
+            margin: 0;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .featured-gallery::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .featured-gallery::-webkit-scrollbar-track {
+            background: rgba(180, 196, 161, 0.2);
+        }
+
+        .featured-gallery::-webkit-scrollbar-thumb {
+            background: var(--olive);
+            border-radius: 4px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 300px;
+            min-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--olive) 0%, var(--sage) 100%);
+            flex-shrink: 0;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
         /* Map Section */
         .map-section {
             padding: 5rem 0;
             background-color: var(--sand);
+        }
+
+        .map-section .section-header h2 {
+            color: var(--olivewood);
+        }
+
+        .map-section .section-header p {
+            color: var(--sage);
         }
 
         .map-container {

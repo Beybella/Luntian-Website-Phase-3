@@ -51,6 +51,36 @@
         </div>
     </section>
 
+<!-- Featured Products Section -->
+<section class="featured-products">
+    <div class="section-header">
+        <div class="container">
+            <h2>Our Collections</h2>
+            <p>Beautiful flower arrangements for every occasion</p>
+        </div>
+    </div>
+    
+    <div class="featured-gallery">
+        <?php 
+        include 'includes/db.php';
+        $sql = "SELECT * FROM products LIMIT 8";
+        $result = $conn->query($sql);
+        
+        if ($result->num_rows > 0):
+            while($product = $result->fetch_assoc()): 
+        ?>
+        <div class="gallery-item">
+            <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>">
+        </div>
+        <?php 
+            endwhile; 
+        else:
+            echo "<p>No products found.</p>";
+        endif;
+        ?>
+    </div>
+</section>
+    
     <section id="map" class="map-section">
         <div class="container">
             <div class="map-container">

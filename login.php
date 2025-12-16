@@ -36,29 +36,38 @@
     }
 ?>
 
-<section class="contact" style="min-height: 80vh; display: flex; align-items: center;">
+<section class="contact" style="min-height: 80vh; display: flex; align-items: center; justify-content: center; background-color: var(--parchment);">
     <div class="container">
-        <div class="section-header">
-            <h2>Welcome Back</h2>
-            <p>Login to your Luntian account</p>
-        </div>
-        
-        <div class="contact-form-wrapper" style="max-width: 450px;">
-            <div style="text-align: center; margin-bottom: 1rem;">
+        <div class="login-card">
+            
+            <div class="login-logo">
+                <a href="index.php">
+                    <img src="assets/LUNTIAN LOGO2.png" alt="Luntian Logo">
+                </a>
+            </div>
+
+            <div class="section-header">
+                <h2>Welcome Back</h2>
+                <p>Login to your Luntian account</p>
+            </div>
+            
+            <div style="text-align: center;">
                 <?php echo $message; ?>
             </div>
+
             <form class="contact-form" method="POST" action="login.php">
                 <input type="email" name="email" placeholder="Email Address" required>
                 <input type="password" name="password" placeholder="Password" required>
                 
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Login</button>
                 
-                <p style="text-align: center; margin-top: 1rem; color: var(--bark);">
+                <p style="text-align: center; margin-top: 1.5rem; color: var(--bark); font-size: 0.9rem;">
                     Don't have an account? <a href="signup.php" style="color: var(--olive); font-weight: bold; text-decoration: none;">Sign up here</a>
                 </p>
             </form>
+
         </div>
-    </div>
+        </div>
 </section>
 
 <?php include 'includes/footer.php'; ?>

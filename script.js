@@ -343,3 +343,60 @@ function confirmLogout(e) {
         window.location.href = "logout.php";
     }
 }
+
+/* =========================================
+   AUTO-SCROLL GALLERY
+   ========================================= */
+window.addEventListener('load', function() {
+    const gallery = document.querySelector('.featured-gallery');
+    if (!gallery) {
+        console.log('Gallery element not found');
+        return;
+    }
+
+    console.log('Gallery element found, starting auto-scroll');
+    
+    // Get original items
+    const items = Array.from(gallery.querySelectorAll('.gallery-item'));
+    const originalCount = items.length;
+    
+    // Clone items at the end for seamless loop
+    items.forEach(item => {
+        const clone = item.cloneNode(true);
+        gallery.appendChild(clone);
+    });
+    
+    let isAutoScrolling = true;
+    let scrollSpeed = 0.5;
+
+    // Function to scroll
+    function scroll() {
+        if (isAutoScrolling && gallery.scrollWidth > gallery.clientWidth) {
+            gallery.scrollLeft += scrollSpeed;
+            
+            // Calculate the width of one complete set (all original items)
+            const itemElements = gallery.querySelectorAll('.gallery-item');
+            const singleSetWidth = (gallery.scrollWidth / 2);
+            
+            // When we've scrolled through one complete set, jump back to start
+            // but the cloned items look identical so it's seamless
+            if (gallery.scrollLeft >= singleSetWidth - 5) { // -5 for tolerance
+                gallery.scrollLeft = 0;
+            }
+        }
+        requestAnimationFrame(scroll);
+    }
+
+    // Start animation loop
+    scroll();
+
+    // Pause on hover
+    gallery.addEventListener('mouseenter', function() {
+        isAutoScrolling = false;
+    });
+
+    // Resume on mouse leave
+    gallery.addEventListener('mouseleave', function() {
+        isAutoScrolling = true;
+    });
+});

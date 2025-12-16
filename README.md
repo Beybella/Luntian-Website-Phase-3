@@ -61,14 +61,28 @@ The design evokes a natural, elegant, and fresh aesthetic, consistent with a pre
 
 The website is structured to be intuitive for online shoppers:
 
-* `index.html` – **Homepage:** Features, promotions, and quick links.
-* `about.html` – **About Page:** Company story, mission, and values.
-* `cart.html` – **Shopping Cart:** Allows customers to review selected items, adjust quantities, and proceed to checkout.
-* `product.html` – **Product Page:** Main online catalog for browsing and ordering.
-* `seasonal.html` – **Flowers Season Page:** Highlights blooms and collections by season (e.g., Valentine's Day).
-* `contact.html` – **Contact Us Page:** Contact form, shop details, and social media links.
-* `assets/` – Storage for all images, icons, and fonts.
+### Core Pages
+* **`index.php`** – **Homepage:** Features current promotions, seasonal highlights, and quick links.
+* **`products.php`** – **Product Catalog:** A dynamic display of all available flowers and arrangements fetched from the database.
+* **`about.php`** – **About Us:** The company story, mission, and florist values.
+* **`contact.php`** – **Contact Us:** Functional contact form, shop details, and social media links.
+* **`season.php`** – **Seasonal Blooms:** Highlights collections based on the current season (e.g., Valentine's Day).
 
+### E-Commerce & User Flow
+* **`cart.php`** – **Shopping Cart:** Allows users to review items, adjust quantities, and manage their selection.
+* **`checkout.php`** – **Checkout:** Handles the final order processing and payment details.
+* **`success.php`** – **Order Confirmation:** Displayed after a successful transaction.
+* **`signup.php` / `login.php`** – **Authentication:** User registration and secure login system.
+* **`profile.php` / `my_orders.php`** – **User Dashboard:** Allows customers to manage their profile and view purchase history.
+
+### Backend & Support
+* **`includes/`** – Contains reusable components:
+    * `db.php`: Database connection settings.
+    * `header.php` & `footer.php`: Global site navigation and footer.
+* **`admin_orders.php`** – **Admin Dashboard:** A private area for managing and fulfilling incoming orders.
+* **`style.css`** – Contains all the visual styling and layouts.
+* **`script.js`** – Handles client-side interactivity and animations.
+* **`assets/`** – Storage for all images, icons, and brand fonts.
 ---
 
 ## 👥 Team Members & Roles
