@@ -143,4 +143,32 @@
     </div>
 </section>
 
+<!-- PASSWORD TOGGLE SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    function togglePassword(inputId, buttonId) {
+        const input = document.getElementById(inputId);
+        const button = document.getElementById(buttonId);
+        if (!input || !button) return;
+
+        const icon = button.querySelector("i");
+
+        button.addEventListener("click", function () {
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.replace("fa-eye", "fa-eye-slash");
+            } else {
+                input.type = "password";
+                icon.classList.replace("fa-eye-slash", "fa-eye");
+            }
+        });
+    }
+
+    togglePassword("signupPassword", "toggleSignupPassword");
+    togglePassword("confirmPassword", "toggleConfirmPassword");
+
+});
+</script>
+
 <?php include 'includes/footer.php'; ?>

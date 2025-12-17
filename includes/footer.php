@@ -39,5 +39,8 @@
 </footer>
 
 <script src="script.js" defer></script>
+<script>
+</script>
+
 </body>
 </html>
