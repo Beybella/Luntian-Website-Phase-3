@@ -402,27 +402,3 @@ window.addEventListener('load', function() {
 });
 
 
-/* =========================================
-   PASSWORD VISIBILITY TOGGLE
-   ========================================= */
-    document.addEventListener("click", function (e) {
-
-        const toggleBtn = e.target.closest(".toggle-password");
-        if (!toggleBtn) return;
-
-        const wrapper = toggleBtn.closest(".password-input-wrapper");
-        if (!wrapper) return;
-
-        const input = wrapper.querySelector("input[type='password'], input[type='text']");
-        const icon = toggleBtn.querySelector("i");
-
-        if (!input || !icon) return;
-
-        if (input.type === "password") {
-            input.type = "text";
-            icon.classList.replace("fa-eye", "fa-eye-slash");
-        } else {
-            input.type = "password";
-            icon.classList.replace("fa-eye-slash", "fa-eye");
-        }
-    });

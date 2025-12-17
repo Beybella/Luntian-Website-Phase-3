@@ -145,29 +145,26 @@
 
 <!-- PASSWORD TOGGLE SCRIPT -->
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("click", function (e) {
+    const toggleBtn = e.target.closest(".toggle-password");
+    if (!toggleBtn) return;
 
-    function togglePassword(inputId, buttonId) {
-        const input = document.getElementById(inputId);
-        const button = document.getElementById(buttonId);
-        if (!input || !button) return;
+    const wrapper = toggleBtn.closest(".password-input-wrapper");
+    if (!wrapper) return;
 
-        const icon = button.querySelector("i");
+    // Find the input that is immediately before the button
+    const input = wrapper.querySelector("input");
+    const icon = toggleBtn.querySelector("i");
 
-        button.addEventListener("click", function () {
-            if (input.type === "password") {
-                input.type = "text";
-                icon.classList.replace("fa-eye", "fa-eye-slash");
-            } else {
-                input.type = "password";
-                icon.classList.replace("fa-eye-slash", "fa-eye");
-            }
-        });
+    if (!input || !icon) return;
+
+    if (input.type === "password") {
+        input.type = "text";
+        icon.classList.replace("fa-eye", "fa-eye-slash");
+    } else {
+        input.type = "password";
+        icon.classList.replace("fa-eye-slash", "fa-eye");
     }
-
-    togglePassword("signupPassword", "toggleSignupPassword");
-    togglePassword("confirmPassword", "toggleConfirmPassword");
-
 });
 </script>
 
